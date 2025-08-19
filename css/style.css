@@ -1,4 +1,128 @@
 @charset "utf-8";
 
-.attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+/* 1. Reset/Normalize */
+/* 2. Variáveis (:root) */
+/* 3. Tipografia (body, h1-h6, p, etc) */
+/* 4. Layout (header, nav, main, footer) */
+/* 5. Componentes (cards, buttons, forms) */
+/* 6. Utilities/helpers (.text-center, .m-1, etc) */
+/* 7. Media queries/responsividade */
+
+/* -------------------------- */
+/* Basic reset */
+/* -------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------------------- */
+/* 2. Variáveis (:root) */
+/* -------------------------- */
+:root {
+  --White: hsl(0, 0%, 100%);
+
+  --Stone-100: hsl(30, 54%, 90%);
+  --Stone-150: hsl(30, 18%, 87%);
+  --Stone-600: hsl(30, 10%, 34%);
+  --Stone-900: hsl(24, 5%, 18%);
+
+  --Brown-800: hsl(14, 45%, 36%);
+
+  --Rose-800: hsl(332, 51%, 32%);
+  --Rose-50: hsl(330, 100%, 98%);
+
+  /* Configuration font Young Sefif */
+  --font-young-serif: "Young Serif", serif;
+  --font-young-weight: 400;
+  --font-young-style: normal;
+
+  /* Configurantion font Outfit */
+  --font-outfit-family: "Outfit", sans-serif;
+  --font-outfit-weight: <weight>;
+  --font-outfit-style: normal;
+  --font-outfit-optical-sizing: auto;
+}
+
+/* -------------------------- */
+/* 3. Tipografia (body, h1-h6, p, etc) */
+/* -------------------------- */
+body {
+  font-size: 16px; /* (paragraph) */
+}
+
+
+.card-recipe-title {
+    font-size: 2rem;
+    line-height: 1;
+    font-family: var(--font-young-serif);
+    margin-bottom: 20px;
+    color: var(--Stone-900);
+}
+
+.card-recipe-paragraph {
+    color: var(--Stone-600);
+    line-height: 1.3;
+    font-family: var(--font-outfit-family);
+    margin-bottom: 20px;
+}
+
+.card-preparation-time {
+    width: auto;
+    padding: 20px;
+    background-color: var(--Rose-50);
+    border-radius: 15px;
+}
+
+.card-preparation-time-subtitle {
+    color: var(--Rose-800);
+    font-family: var(--font-outfit-family);
+    margin-bottom: 20px;
+}
+
+.card-preparation-time-ul {
+    font-family: var(--font-outfit-family);
+    margin-left: 20px;
+}
+
+.card-preparation-time-ul li {
+    margin-bottom: 10px;
+    padding-right: 30px;
+}
+
+.card-preparation-time-ul li::marker {
+    color: var(--Brown-800);
+}
+
+
+/* ------------------------------------- */
+/* 7. Media queries/responsividade */
+/* ------------------------------------- */
+
+/* MOBILE FIRST */
+@media (max-width: 375px) {
+  .card {
+    width: 375px;
+    max-height: 100vh;
+  }
+
+  .card-information {
+    display: flexbox;
+    flex-direction: column;
+    margin: 30px;
+  }
+
+  .attribution {
+    display: none;
+  }
+}
+
+/* Formatation - Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
