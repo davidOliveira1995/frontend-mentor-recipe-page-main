@@ -51,12 +51,12 @@
 body {
   color: var(--Stone-600);
   font-size: 16px; /* (paragraph) */
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: var(--Stone-100);
 }
 
 .card-title,
@@ -74,7 +74,7 @@ body {
 
 .card-title {
   color: var(--Stone-900);
-  font-size: 2rem;
+  font-size: 2.2rem;
   line-height: 1;
 }
 
@@ -107,7 +107,15 @@ body {
 /* ------------------------------------------- */
 /* 4. Layout (header, nav, main, footer) */
 /* ------------------------------------------- */
+.card {
+  background-color: var(--White);
+}
 
+img {
+  max-width: 100%; /* não passa do tamanho do container */
+  height: auto;    /* mantém proporção */
+  display: block;  /* tira espaço em branco embaixo */
+}
 
 /* ------------------------------------------ */
 /* 5. Componentes (cards, buttons, forms) */
@@ -159,15 +167,51 @@ strong {
   color: var(--Stone-600);
 }
 
+.card-table-nutrition {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.card-table-nutrition td,
+.card-table-nutrition th {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--Stone-150); /* a linha */
+}
+
+.card-table-nutrition tr:last-child td,
+.card-table-nutrition tr:last-child th {
+  border-bottom: none;
+}
+
+.card-table-nutrition td {
+  color: var(--Rose-800);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------- */
+/* 6. Utilities/helpers (.text-center, .m-1, etc) */
+/* ------------------------------------------------- */
+
+hr {
+  margin-bottom: 20px;
+  border: 1px solid var(--Stone-150);
+}
+
+
 /* ------------------------------------- */
 /* 7. Media queries/responsividade */
 /* ------------------------------------- */
 
 /* MOBILE FIRST 375px */
-@media (max-width: 375px) {
+@media (max-width: 759px) {
   .card {
     width: 375px;
-    max-height: 100vh;
+    min-height: 100vh;
+  }
+
+  .card-title {
+    font-weight: 200;
   }
 
   .card-information {
@@ -182,17 +226,30 @@ strong {
 }
 
 /* DESKTOP 1440px */
-@media (min-width: 600px) {
+@media (min-width: 760px) {
   .card {
-    width: 600px;
+    width: 720px;
+    padding: 40px;
+    margin: 50px;
+    border-radius: 20px;
+  }
+
+  img {
+    margin-bottom: 40px;
+    border-radius: 20px;
   }
 }
 
 /* Attribution */
 .attribution {
-  font-size: 11px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.attribution a:hover {
+  color: var(--Rose-800);
 }
